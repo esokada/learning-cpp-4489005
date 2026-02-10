@@ -9,6 +9,7 @@ int main(){
     int fahrenheit = 100;
     int celsius;
 
+    //expressions always convert their value to the largest type present
     celsius = ((float)5 / 9.0) * (fahrenheit - 32);
 
     std::cout << std::endl;

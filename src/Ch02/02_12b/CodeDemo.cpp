@@ -5,14 +5,20 @@
 #include <iostream>
 #include <cstdint>
 
-enum cow_purpose {dairy, meat, hide, pet};
+//C-style enum - not recommended
+//can cause namespace conflicts
+//don't have a scope - are like global variables
+//enum cow_purpose {dairy, meat, hide, pet};
+
+enum class cow_purpose {dairy, meat, hide, pet};
 
 int main(){
-    int a;
+    cow_purpose a;
 
-    a = meat;
+    a = cow_purpose::meat;
 
-    std::cout << "a = " << a << std::endl;
+
+    std::cout << "a = " << (int) a << std::endl;
 
     std::cout << std::endl << std::endl;
     return (0);

@@ -7,12 +7,33 @@
 
 enum class cow_purpose {dairy, meat, hide, pet};
 
-struct cow{
+class cow{
+    //class members are private by default
+    public:
+        //an implicit constructor is always implemented, or you can implement one
+        //overloading constructor - classic example is with initialization values for all data members
+        //constructors do not specify a return type
+        //name must be same as name of class
+        cow(std::string name_i, int age_i){
+            name = name_i;
+            age = age_i;
+        };
+        //good practice to use the const modifier to prevent getter from modifying objects
+        //"const correctness"
+        std::string get_name() const{
+            return name;
+        }
+        int get_age() const{
+            return age;
+        };
+
+    private:
     std::string name;
     int age;
     cow_purpose purpose;
 };
 
+//main function is updated in 03_03b
 int main(){
     cow my_cow;
     my_cow.age = 5;
