@@ -7,6 +7,7 @@
 #include <fstream>
 
 int main(){
+    //ifstream object - an input stream from a file
     std::ifstream inFile;
     std::string str;
     int number;
@@ -16,9 +17,16 @@ int main(){
     if (inFile.fail())
         std::cout << std::endl << "File not found!" << std::endl;
     else{
+        //why always the while loops?!
         while (!inFile.eof()){
             getline(inFile, str);
-            std::cout << str << std::endl;
+            std::cout << str << ", ";
+            getline(inFile, str);
+            number = stoi(str);
+            std::cout << number << ", ";
+            getline(inFile, str);
+            letter = str[0];
+            std::cout << letter <<std::endl;
         }
         inFile.close();
     }
